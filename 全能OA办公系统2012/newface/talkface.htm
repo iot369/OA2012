@@ -1,0 +1,436 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="web,26 Feb 1960 08:21:57 GMT">
+<title>信息窗--通信工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="../qqprg/style.css">
+<SCRIPT language=javascript>
+<!--
+if (window.Event) 
+　document.captureEvents(Event.MOUSEUP); 
+ 
+function nocontextmenu() {
+ event.cancelBubble = true
+ event.returnvalue = false;
+ return false;
+}
+ 
+function norightclick(e) {
+ if (window.Event) {
+　if (e.which == 2 || e.which == 3)
+　 return false;
+ } else if (event.button == 2 || event.button == 3) {
+　 event.cancelBubble = true
+　 event.returnvalue = false;
+　 return false;
+ } 
+}
+ 
+document.oncontextmenu = nocontextmenu;　// for IE5+
+document.onmousedown = norightclick;　　 // for all others
+//-->
+</SCRIPT>
+<script language="javascript">
+<!--hide
+var randnumber,y,mainwin,facenum;
+var listtimeid=null;
+randtime=0;
+mainwin=0;
+y=0;
+function close_win()
+{
+	opener.dispinfoflag.value="0";
+	opener.moveTo(600,70);
+}
+
+function listonlinehead()
+{
+window("userlist").document.open();
+window("userlist").document.write("<html>");
+window("userlist").document.write("<head>");
+window("userlist").document.write("<meta http-equiv=\"pragma\" content=\"no-cache\">");
+window("userlist").document.write("<meta http-equiv=\"expires\" content=\"web,26 Feb 1960 08:21:57 GMT\">");
+window("userlist").document.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\">");
+window("userlist").document.write("<style type=\"text/css\">");
+window("userlist").document.write("<!--");
+window("userlist").document.write("body {  font-family: \"宋体\"; font-size: 9pt;}");
+window("userlist").document.write("td {font-family:\"宋体\";font-size:9pt;}");
+window("userlist").document.write("-->");
+window("userlist").document.write("</style>");
+window("userlist").document.write("</head>");
+window("userlist").document.write("<body bgcolor=\"#8484c6\" text=\"#000000\" leftmargin=\"1\" topmargin=\"1\">");
+window("userlist").document.write("<table border='0' bgcolor='#8484c6' width='100%'>");
+}
+
+function listonlineuser()
+{
+window("userlist").document.open();
+listonlinehead();
+var userinfostr,userinfodim,i,dimsums,infstr,onlineflag,onlinedate,onlineflag,okcode;
+onlineflag=0;
+userinfostr=onlineuser.value;
+if (userinfostr.length==0)
+{
+	refflag.value="0";
+}
+else
+{
+	window("userlist").document.write("<table border='0' bgcolor='#8484c6' width='100%'>");
+	userinfodim=userinfostr.split("|");
+	for (i in userinfodim)
+	{	
+		if(userinfodim[i]!="")
+		{
+		infstr=userinfodim[i].split("$");
+		window("userlist").document.write("<tr>");
+		if (infstr[0]==opener.usersessionid.value && infstr[2]=="0")
+		{
+			window("userlist").document.write("<td width='100%' height='20' ONMOUSEOVER=\"this.bgColor='#716fbd';this.style.cursor='hand';\" ONMOUSEOUT=\"this.bgColor='#8484c6';\" ONCLICK=\"parent.click_disp_history('"+infstr[0]+"','"+infstr[1]+"');\" title=\""+infstr[3]+"上线\"><img src='../qqpic/face/face"+infstr[5]+".gif' height=16 width=16>&nbsp;"+infstr[1]+"</td>");
+			onlineflag=1;
+		}
+		else if (infstr[0]==opener.usersessionid.value && infstr[2]=="2")
+		{
+			window("userlist").document.write("<td width='100%' height='20' ONMOUSEOVER=\"this.bgColor='#716fbd';this.style.cursor='hand';\" ONMOUSEOUT=\"this.bgColor='#8484c6';\" ONCLICK=\"parent.click_disp_history('"+infstr[0]+"','"+infstr[1]+"');\" title=\""+infstr[3]+"上线(注册用户)\"><img src='../qqpic/face/face"+infstr[5]+".gif' height=16 width=16>&nbsp;<font color=#e8e8e8>"+infstr[1]+"</font></td>");
+			onlineflag=1;
+		}
+		else if (infstr[2]=="2")
+		{
+			window("userlist").document.write("<td width='100%' height='20' ONMOUSEOVER=\"this.bgColor='#716fbd';this.style.cursor='hand';\" ONMOUSEOUT=\"this.bgColor='#8484c6';\" ONCLICK=\"parent.click_disp_history('"+infstr[0]+"','"+infstr[1]+"');\" title=\""+infstr[3]+"上线(注册用户)\"><img src='../qqpic/face/face"+infstr[5]+".gif' height=16 width=16>&nbsp;<font color=#e8e8e8>"+infstr[1]+"</td>");
+		}
+		else if (infstr[2]=="0")
+			window("userlist").document.write("<td width='100%' height='20' ONMOUSEOVER=\"this.bgColor='#716fbd';this.style.cursor='hand';\" ONMOUSEOUT=\"this.bgColor='#8484c6';\" ONCLICK=\"parent.click_disp_history('"+infstr[0]+"','"+infstr[1]+"');\" title=\"于"+infstr[3]+"上线\"><img src='../qqpic/face/face"+infstr[5]+".gif' height=16 width=16>&nbsp;"+infstr[1]+"</td>");
+		else
+		{
+			window("userlist").document.write("<td width='100%' height='20' ONMOUSEOVER=\"this.bgColor='#716fbd';this.style.cursor='hand';\" ONMOUSEOUT=\"this.bgColor='#8484c6';\" ONCLICK=\"parent.click_disp_history('"+infstr[0]+"','"+infstr[1]+"');\" title=\"于"+infstr[3]+"上线(站长)\"><img src='../qqpic/face/face"+infstr[5]+".gif' height=16 width=16>&nbsp;<font color=#ffff00>"+infstr[1]+"</font></td>");
+			if (infstr[0]==opener.usersessionid.value)
+				onlineflag=1;
+		}
+		window("userlist").document.write("</tr>");
+		}
+	}
+window("userlist").document.write("</table>");
+refflag.value=onlineflag;
+opener.refflag.value=onlineflag;
+}
+window("userlist").document.write("</body></html>");
+window("userlist").document.close();
+
+//reset_win_site();
+}
+
+function sx()
+{
+	if (refflag.value=="1" || opener.refflag.value=="1")
+		{
+			if (pageflag.value=="1")
+			{
+				listflag.value="0";
+				window("userlist").location.href="disp_online_user.asp?sitenumber="+opener.sitenumber.value;
+			}
+			listtime();
+		}
+	ok=setTimeout("sx()",15000+randtime*1000);
+	randtime=parseInt(Math.random() * 10);
+}
+
+
+function window_onload()
+{
+	opener.dispinfoflag.value="1";
+	sx();
+	window("infowin").document.open();
+	window("infowin").document.write("<html>");
+	window("infowin").document.write("<head>");
+	window("infowin").document.write("<meta http-equiv=\"pragma\" content=\"no-cache\">");
+	window("infowin").document.write("<meta http-equiv=\"expires\" content=\"web,26 Feb 1960 08:21:57 GMT\">");
+	window("infowin").document.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\">");
+	window("infowin").document.write("<style type=\"text/css\">");
+	window("infowin").document.write("<!--");
+	window("infowin").document.write("body {  font-family: \"宋体\"; font-size: 9pt;}");
+	window("infowin").document.write("td {font-family:\"宋体\";font-size:9pt;}");
+	window("infowin").document.write("A:link {COLOR: #aa0000; TEXT-DECORATION: none}");
+	window("infowin").document.write("A:active {COLOR: #aa0000; TEXT-DECORATION: none}");
+	window("infowin").document.write("A:visited {COLOR: #aa0000; TEXT-DECORATION: none}");
+	window("infowin").document.write("A {COLOR: #aa0000; TEXT-DECORATION: underline}");
+	window("infowin").document.write("A:hover {COLOR: #aa0000; TEXT-DECORATION: underline}");
+	window("infowin").document.write("-->");
+	window("infowin").document.write("</style>");
+	window("infowin").document.write("</head>");
+	window("infowin").document.write("<body bgcolor=\"#ffffff\" text=\"#000000\" leftmargin=\"1\" topmargin=\"1\">");
+	window("infowin").document.write("<center><font color=\"#aa0000\">>>>>>>>>>>系统说明<<<<<<<<<<</font></center>");
+	window("infowin").document.write("1.单击显/隐主窗口按钮可以显示或隐藏主窗口。<br>");
+	window("infowin").document.write("2.在该模式中的对话仍是一对一，相当于私聊，即对话框中所有对话都是与自己有关的，别人无法看见。<br>");
+	window("infowin").document.write("3.对话模式与弹出窗口模式是互通的，相互之间都能接收和发送信息。<br><hr>");
+}
+
+function reset_win_site()
+{
+	screeny=window("userlist").document.body.scrollHeight;
+	y=removewin.value;
+	if (screeny<y)
+	{
+	y=0;
+	removewin.value=y;
+	}
+	window("userlist").scroll(1,y);
+}
+
+function reset_win_site()
+{
+	screeny=window("userlist").document.body.scrollHeight;
+	y=removewin.value;
+	if (screeny<y)
+	{
+	y=0;
+	removewin.value=y;
+	}
+	window("userlist").scroll(1,y);
+}
+
+function change_color(colorstr)
+{
+	color.value=colorstr;
+}
+
+function click_disp_history(number,namestr)
+{
+userid.value=number;
+sendname.value=namestr;
+talkinfo.value="对"+namestr+"说：";
+info.focus();
+}
+
+function disp_history()
+{
+var i,infodim,infstr,number,infostr,re,info;
+infostr=getinfo.value;
+getinfo.value="";
+opener.getinfo.value="";
+if (infostr.length>0)
+{
+	parent.window.focus();
+	infodim=infostr.split("|");
+	for (i in infodim)
+	{
+		if (infodim[i]!="")
+		{
+			opener.history.value=infodim[i]+"|"+opener.history.value;
+			infstr=infodim[i].split("$");
+			info=unescape(infstr[5]);
+			re=/</g;
+			info=info.replace(re,"&lt;");
+			re=/>/g;
+			info=info.replace(re,"&gt;");
+			re=/\r\n/g;
+			info=info.replace(re,"<br>");
+			window("infowin").document.writeln("<div align=\"left\"><img src=\"images/dog3.gif\" border=0><font color=\"#aa0000\">"+infstr[2]+"--<label onmouseover=\"this.style.cursor='hand';\" onclick=\"parent.click_disp_history('"+infstr[1]+"','"+infstr[4]+"');\">"+infstr[4]+"</label></font><br><font color="+color.value+">"+info+"</font></div>");
+		}
+	}
+}
+window("infowin").scroll(1,window("infowin").document.body.scrollHeight);	
+}
+
+function sendinfo()
+{
+	var infstr,headstr,my_sessionid,user_sessionid,site_name,site_url,user_name,re,sendinfostr;
+	my_sessionid=opener.usersessionid.value;
+	site_name=opener.sitename.value;
+	site_url=opener.siteurl.value;
+	user_name=opener.username.value;
+	user_sessionid=userid.value;
+	infstr=info.value;
+	if (my_sessionid=="" || site_name=="" || site_url=="" || user_name=="" || user_sessionid=="")
+	{
+		alert("请选择一个用户！");
+		return false;
+	}
+	infstr=infstr.replace(/(^\s*)|(\s*$)/g, "");
+	if (infstr.length==0)
+	{
+		alert("不能发送空信息！");
+		info.focus();
+		return false;
+	}
+ 	if (infstr.indexOf("$")!=-1 || infstr.indexOf("|")!=-1 ) 
+	{ 
+		alert("信息中不能含有$,|字符！"); 
+		info.focus();
+		return false;
+	}
+	info.value="";
+	headstr=user_sessionid+"$"+my_sessionid+"$"+site_name+"$"+site_url+"$"+user_name;
+	opener.history.value=headstr+"$"+escape(infstr)+"|"+opener.history.value;
+	sendinfostr=infstr;
+	infstr=unescape(escape(infstr));
+	re=/</g;
+	infstr=infstr.replace(re,"&lt;");
+	re=/>/g;
+	infstr=infstr.replace(re,"&gt;");
+	re=/\r\n/g;
+	infstr=infstr.replace(re,"<br>");
+	window("infowin").document.write("<div align=\"left\"><img src=\"images/dog1.gif\" border=0>你对<label onmouseover=\"this.style.cursor='hand';\" onclick=\"parent.click_disp_history('"+user_sessionid+"','"+sendname.value+"');\"><font color=\"#aa0000\">"+sendname.value+"</font></label>说：</font><br><font color="+color.value+">"+infstr+"</font></div>");
+	window("infowin").scroll(1,window("infowin").document.body.scrollHeight);	
+	window("hidewin").location.href="writesendinfo1.asp?headinfo="+headstr+"&info="+escape(sendinfostr);
+	info.readOnly=true;
+	send.disabled=true;
+	timego();
+}
+
+function sendok()
+{
+	info.readOnly=false;
+	send.disabled=false;
+	info.focus();
+}
+function timego()
+{
+setTimeout("sendok()",4000);
+}
+function mainwindisp()
+{
+	if (mainwin==1)
+	{
+		openmainwin.bgColor="#e8e8e8";
+		openmainwin.title="隐藏主窗口";
+		opener.moveTo(600,70);
+		opener.focus();
+		mainwin=0;
+	}
+	else
+	{
+		openmainwin.bgColor="#c7c7c7";
+		openmainwin.title="显示主窗口";
+		opener.moveTo(6000,70);
+		mainwin=1;
+	}
+}
+
+function stop_move()
+{
+	clearTimeout(timerID);
+}
+
+function listtime()
+{
+if (listflag.value=="1")
+	{
+		if (pageflag.value=="0")
+			listonlinemanager();
+		else if (pageflag.value=="1")
+			listonlineuser();
+		disp_history();
+		clearTimeout(listtimeid);
+	}
+else
+	listtimeid=setTimeout("listtime()",1);
+}
+-->
+</script>
+</head>
+<body bgcolor="#ffffff" leftmargin="1" topmargin="0" onunload="close_win();" onload="window_onload();">
+<input id="removewin" name="removewin" type="hidden" value="0">
+<input id="color" name="color" type="hidden" >
+<input id="userid" name="userid" type="hidden"  >
+<input id="getinfo" name="getinfo" type="hidden" >
+<input id="onlineuser" name="onlineuser" type="hidden" >
+<input id="refflag" name="refflag" type="hidden" value="1">
+<input id="pageflag" name="pageflag" type="hidden" value="1">
+<input id="listflag" name="listflag" type="hidden" value="0">
+<input id="sendname" name="sendname" type="hidden" >
+<IFRAME name="hidewin" frameBorder=0 scrolling="no" noresize height="0" width="0"></IFRAME>
+<table border="0" cellpadding="0" cellspacing="0" width="359">
+  <tr>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=1></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=1></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=78></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=17></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=67></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=167></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=26></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=2></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=1></td>
+  </tr>
+
+  <tr>
+   <td><IMG border=0 height=3 name=chat1 src="images/chat1.gif" width=1></td>
+   <td colspan="6"><IMG border=0 height=3 name=chat2 src="images/chat2.gif" width=356></td>
+   <td><IMG border=0 height=3 name=chat3 src="images/chat3.gif" width=2></td>
+   <td><IMG border=0 height=3 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+    <td><IMG border=0 height=18 name=chat4 src="images/chat4.gif" width=1></td>
+    <td colspan="2"><IMG border=0 height=18 name=chat5 src="images\chat5.gif" width=79></td>
+    <td colspan="3" bgcolor="#bdbdbd" height="16"></td>
+    <td bgcolor="#bdbdbd">
+      <p align="center"><IMG border=0 height=11 src="../qqpic/Close.gif" width=11></p>
+    </td>
+    <td><IMG border=0 height=18 name=chat8 src="images/chat8.gif" width=2></td>
+   <td><IMG border=0 height=16 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+   <td><IMG border=0 height=45 name=chat9 src="images/chat9.gif" width=1></td>
+    <td colspan="4" bgcolor="#e8e8e8">
+      <table border="1" width="100%" bordercolorlight="#000000" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" height="100%">
+        <tr>
+          <td width="39%" height=22 bgcolor="#e8e8e8" valign="center" align="middle" id="siteuser" ONMOUSEOVER="this.style.cursor='hand';" >
+          <center>在&nbsp;线&nbsp;员&nbsp;工</center>
+          </td>
+          <td width="66%" height="22" bgcolor="#e8e8e8" colspan="3" valign="center" align="middle" id="openmainwin" title="显示主窗口" ONMOUSEOVER="this.style.cursor='hand';" ONCLICK="mainwindisp()" onmousedown="this.bgColor='#c7c7c7';" 
+         >显/隐主窗口
+          </td>
+        </tr>
+        <tr>
+          <td width="49%" height="23" id="sitemanager" bgcolor="#e8e8e8" valign="center" align="middle"  ONMOUSEOVER="this.style.cursor='hand';">
+            <center>查看考勤</center>
+          </td>
+          <td width="17%" height="23" bgcolor="#227722" valign="center" align="middle" ONMOUSEOVER="this.style.cursor='hand';" ONCLICK="change_color('#227722')" title="墨绿色"></td>
+          <td width="17%" height="23" bgcolor="#0000dd" valign="center" align="middle" ONMOUSEOVER="this.style.cursor='hand';" ONCLICK="change_color('#0000dd')" title="蓝色"></td>
+          <td width="17%" height="23" bgcolor="#000000" valign="center" align="middle" ONMOUSEOVER="this.style.cursor='hand';" ONCLICK="change_color('#000000')" title="黑色"></td>
+        </tr>
+      </table>
+   </td> 
+    <td colspan="2" bgcolor="#e8e8e8"><center><img src="../qqpic/logo.gif" border="0" width="180" height="40"></center></td>
+   <td><IMG border=0 height=45 name=chat12 src="images/chat12.gif" width=2></td>
+   <td><IMG border=0 height=45 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+   <td><IMG border=0 height=1 name=chat13 src="images/chat13.gif" width=1></td>
+   <td colspan="6"><IMG border=0 height=1 name=chat14 src="images/chat14.gif" width=356></td>
+   <td><IMG border=0 height=1 name=chat15 src="images/chat15.gif" width=2></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+   <td><IMG border=0 height=184 name=chat16 src="images/chat16.gif" width=1></td>
+    <td colspan="3" bgcolor="#8484c6">
+    <IFRAME name="userlist" frameBorder=0 scrolling="yes" marginwidth=1 marginheight=1 noresize height="184" src="userlist.htm" width="100%" bgcolor="#8484C6"></IFRAME> 
+	</td> 
+    <td colspan="3" bgcolor="#8484c6">
+      <IFRAME name="infowin" frameBorder=0 scrolling="yes" marginwidth=1 marginheight=1 src="" noresize height="184" width="100%"></IFRAME>
+   </td>
+   <td><IMG border=0 height=184 name=chat19 src="images/chat19.gif" width=2></td>
+   <td><IMG border=0 height=184 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+   <td><IMG border=0 height=25 name=chat20 src="images/chat20.gif" width=1></td>
+    <td colspan="6" bgcolor="#e8e8e8" valign="center" align="left">
+    <input name="talkinfo" size="12" readonly height="20" maxLength=200 style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; HEIGHT: 20px"><input name="info" size="41" height="20" maxLength=200 style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; HEIGHT: 20px; WIDTH: 235px"><input type="submit" value="发送" name="send" onclick="sendinfo();info.focus();" height="20" style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; HEIGHT: 20px" maxLength=0>
+   </td>
+   <td><IMG border=0 height=25 name=chat22 src="images/chat22.gif" width=2></td>
+   <td><IMG border=0 height=25 src="images/spacer.gif" width=1></td>
+  </tr>
+  <tr>
+   <td><IMG border=0 height=1 name=chat23 src="images/chat23.gif" width=1></td>
+   <td><IMG border=0 height=1 name=chat24 src="images/chat24.gif" width=1></td>
+   <td colspan="5"><IMG border=0 height=1 name=chat25 src="images/chat25.gif" width=355></td>
+   <td><IMG border=0 height=1 name=chat26 src="images/chat26.gif" width=2></td>
+   <td><IMG border=0 height=1 src="images/spacer.gif" width=1></td>
+  </tr>
+</table>
+<script language="javascript">
+userlist.document.close();
+info.focus();
+</script>
+</body>
+</html>

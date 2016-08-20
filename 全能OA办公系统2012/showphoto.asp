@@ -1,0 +1,3 @@
+<%@ LANGUAGE = VBScript.Encode %>
+<!--#include file="asp/opendb.asp"-->
+<%#@~^WQEAAA==~@#@&dY,mW	x{Gwx[4vJGC(E/HE~rmW	UE~rl1mn/d[kxE#@#@&?Y~.k'?n.7+.R;.lOr(L+1YvEbGr9AcDn^KDNknYr#@#@&d5V{Jk+s+^O,w4WDGP6DGh,w+.dKxrx6~StnM+,kN{J,'PDDr:vDn5!+/DcJbNJ*b~@#@&DkRGwnU,/5VB^W	xSqBFP@#@&"+dwKUk+ ;W	Y+	Y:zwPxPrkhCT+zCEP@#@&Id2W	/R$kUCMX	DbO+,DdcrwtGOKJbRTnDZ4!x0`Gl!ZT!Z#~@#@&B.dcmVKd+,@#@&EdnY,Dk'UWO4bxLP@#@&Bk+O~1WxUx	WOtbUTP@#@&hGkAAA==^#~@%> 

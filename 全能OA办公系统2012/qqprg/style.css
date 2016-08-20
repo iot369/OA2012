@@ -1,0 +1,45 @@
+LI {
+	LINE-HEIGHT: 0.3
+}
+UL {
+	MARGIN-LEFT: 25px
+}
+BODY {
+	FONT-FAMILY: 宋体,楷体,黑体,幼圆; FONT-SIZE: 9pt
+}
+TD {
+	FONT-FAMILY: 宋体,楷体,黑体,幼圆; FONT-SIZE: 9pt
+}
+A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A {
+	COLOR: black; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: black; TEXT-DECORATION: underline
+}
+.select {
+	BACKGROUND-COLOR: white; BORDER-BOTTOM-COLOR: white; BORDER-LEFT-COLOR: white; BORDER-RIGHT-COLOR: white; BORDER-TOP-COLOR: white; COLOR: black; FONT-FAMILY: 宋体,trebuchet, Arial, geneva; FONT-SIZE: 9pt
+}
+.text {
+	BACKGROUND-COLOR: #000080; COLOR: #ffffff; FONT-FAMILY: 宋体,trebuchet, Arial, geneva; FONT-SIZE: 9pt
+}
+.includebutton {
+	FONT-FAMILY: 宋体,楷体,黑体,幼圆,trebuchet, Arial, geneva; FONT-SIZE: 9pt
+}
+TABLE {
+	FONT-SIZE: 9pt
+}
+AREA {
+	CURSOR: hand; TEXT-DECORATION: underline
+}
+MAP {
+	CURSOR: hand; TEXT-DECORATION: underline
+}

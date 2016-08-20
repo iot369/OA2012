@@ -1,0 +1,23 @@
+td,p,th,body {
+	font-size: 12px;
+	font-family: "ËÎÌו", "Times New Roman", "sans-serif","Arial";
+}
+a:link {
+	text-decoration: none;
+}
+.menutitle {
+	font-size: 12px;
+	line-height: 16px;
+	color: #0000FF;
+}
+.main_tdbg
+{
+	border: 1px solid #8cc3de;
+	padding: 8;
+	width: 768px;
+}
+.main_tdbg2
+{
+	border: 1px solid #8cc3de;
+	background-color: #FFFFFF;
+}

@@ -1,0 +1,29 @@
+FORM {
+	MARGIN-BOTTOM: 0px
+}
+A:active{
+	color: #0000FF; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #0000FF; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #0000FF; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #FF0000; TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	
+}
+BODY {
+	FONT-SIZE: 12px; COLOR: #000000; 
+	margin-top: 0pt; margin-bottom: 0pt; margin-left: 0pt;
+	margin-right: 0pt; 
+	
+}
+
+.L1 {  background-image: url(../images/line1.gif); background-repeat: no-repeat; background-position: left bottom}
+.L2 {  background-image: url(../images/line.gif); background-repeat: no-repeat; background-position: left bottom}

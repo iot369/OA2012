@@ -1,0 +1,69 @@
+<STYLE>
+INPUT
+{
+    BORDER-BOTTOM-COLOR: #EFEFEF;
+    BORDER-BOTTOM-WIDTH: 1px;
+    BORDER-LEFT-COLOR: #cccccc;
+    BORDER-LEFT-WIDTH: 1px;
+    BORDER-RIGHT-COLOR: #999999;
+    BORDER-RIGHT-WIDTH: 1px;
+    BORDER-TOP-COLOR: #ffffff;
+    BORDER-TOP-WIDTH: 1px;
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+FORM
+{
+    CURSOR: crosshair;
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: normal
+}
+A:link
+{
+    COLOR: black;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: gray;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A:active
+{
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: red;
+    TEXT-DECORATION: underline
+}
+TD
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+.jobjx-input
+{
+    BACKGROUND-COLOR: #d8d7bc;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    FONT-SIZE: 9pt;
+    align: absmiddle
+}
+.jobjx-company
+{
+    BORDER-BOTTOM: 1px solid;
+    BORDER-LEFT: white 1px solid;
+    BORDER-RIGHT: white 1px solid;
+    BORDER-TOP: white 1px solid;
+    FONT-SIZE: 9pt
+}
+</STYLE>

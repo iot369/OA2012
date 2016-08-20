@@ -1,0 +1,2 @@
+<%
+response.write"<center><img border='0' src='pic/down.gif'><br>Powered By： <a href=http://6k.k900.com><font face=Impact color=#000080><u>6K</font><font face=Terminal color=#70104B>BBS</font></a><font color=#6F3700>V5.0</font></u>&nbsp;&nbsp;&nbsp; 程序制作：<u><font face=Terminal color=#0C4E63>ZYM</font></u><br>本论坛言论纯属发表者个人意见，与 <a href=http://6k.k900.com><font face=Impact color=#000080><u>6K</font><font face=Terminal color=#70104B>BBS</font></a><font color=#6F3700>V5.0</font></u> 立场无关</center><hr size=1 color="&c1&" width=94% >"%>

@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>发送信息</title>
+<meta http-equiv="Content-Type" content="text/html;">
+<link rel="stylesheet" type="text/css" href="style.css">
+<SCRIPT language=javascript>
+<!--
+if (window.Event) 
+　document.captureEvents(Event.MOUSEUP); 
+ 
+function nocontextmenu() {
+ event.cancelBubble = true
+ event.returnvalue = false;
+ return false;
+}
+ 
+function norightclick(e) {
+ if (window.Event) {
+　if (e.which == 2 || e.which == 3)
+　 return false;
+ } else if (event.button == 2 || event.button == 3) {
+　 event.cancelBubble = true
+　 event.returnvalue = false;
+　 return false;
+ } 
+}
+ 
+document.oncontextmenu = nocontextmenu;　// for IE5+
+document.onmousedown = norightclick;　　 // for all others
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#ffffff">
+<form method="post" name="form" action="">
+<table border="0" cellpadding="0" cellspacing="0" width="354" bgcolor="#E7E7E7">
+  <tr>
+   <td><img src="../qqpic/info/spacer.gif" width="2" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="77" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="85" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="154" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="17" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="17" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="2" height="1" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+
+  <tr>
+   <td colspan="7"><img name="porm_r1_c1" src="../qqpic/info/porm_r1_c1.gif" width="354" height="2" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="2" border="0"></td>
+  </tr>
+  <tr>
+   <td rowspan="5"><img name="porm_r2_c1" src="../qqpic/info/porm_r2_c1.gif" width="2" height="240" border="0"></td>
+   <td><img name="porm_r2_c2" src="../qqpic/info/title.gif" width="77" height="16" border="0"></td>
+   <td colspan="2" width="239" height="16" bgcolor="#BDBEBD">
+    <p align="center">显示广告连接</p>
+   </td>
+   <td width="17" height="16" bgcolor="#BDBEBD">
+    <p align="center"><img border="0" src="../qqpic/min.gif" width="11" height="11"></p>
+   </td>
+   <td width="17" height="16" bgcolor="#BDBEBD">
+    <p align="center"><img border="0" src="../qqpic/Close.gif" width="11" height="11"></p>
+   </td>
+   <td rowspan="5"><img name="porm_r2_c7" src="../qqpic/info/porm_r2_c7.gif" width="2" height="240" border="0"></td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="16" border="0"></td>
+  </tr>
+  <tr>
+   <td colspan="5" width="350" height="26">
+    <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="100%">
+          <p align="center">显示发送信息者的用户名和所在站点</p>
+        </td>
+      </tr>
+    </table>
+   </td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="26" border="0"></td>
+  </tr>
+  <tr>
+   <td colspan="2" width="162" height="40">
+    <table border="1" cellpadding="0" cellspacing="0" width="100%" bordercolorlight="#000000" height="100%" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="100%" valign="middle">
+          <p align="left">请输入信息<br>
+          请按Alt+S键发送信息</p>
+        </td>
+      </tr>
+    </table>
+   </td>
+   <td colspan="3" width="188" height="40" valign="middle">
+    <p align="center"><img border="1" src="../qqpic/info/dogbanner.gif" width="186" height="38"></p>
+   </td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="40" border="0"></td>
+  </tr>
+  <tr>
+   <td colspan="5" width="350" height="131" valign="top">
+    <p align="left"><textarea rows="5" name="S1" cols="42" style="height:131;width=350"></textarea></p>
+   </td>
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="131" border="0"></td>
+  </tr>
+  <tr>
+   <td colspan="5" width="350" height="27">&nbsp;<input type="submit" value="发 送[S]" name="send" style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; HEIGHT: 20">&nbsp;&nbsp;  
+    &nbsp;&nbsp; <input type="button" value="关 闭[C]" name="close" style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; HEIGHT: 20"></td> 
+   <td><img src="../qqpic/info/spacer.gif" width="1" height="27" border="0"></td> 
+  </tr> 
+</table> 
+</form> 
+</body> 
+</html> 

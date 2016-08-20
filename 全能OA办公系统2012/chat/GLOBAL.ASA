@@ -1,0 +1,61 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+Sub Session_OnStart
+    Session.timeout=1
+End sub
+
+Sub Session_OnEnd
+   for i= 1 to 100
+    if application("user" & i) = session("user") then
+       application.lock
+       application("user" & i) = ""
+       application("sex" & i) = ""
+       application("intime" & i)=""
+	   application("userlevel" & i)=""
+       application("haveuser" & i)=""
+       application("last" & i)=""
+        for x =1 to 39
+	      application("systemsay" & x)  = application("systemsay" & x+1)
+          application("sexsay" & x)     = application("sexsay" & x+1)
+          application("me" & x)         = application("me" & x+1)
+          application("color" & x)      = application("color" & x+1)
+          application("showip" & x)     = application("showip" & x+1)
+          application("mood" & x)       = application("mood" & x+1)
+          application("to" & x)         = application("to" & x+1)
+          application("siliao" & x)     = application("siliao" & x+1)
+          application("zixiao" & x)     = application("zixiao" & x+1)
+          application("page" & x)       = application("page" & x+1)
+          application("tuan" & x)       = application("tuan" & x+1)
+          application("tietu" & x)      = application("tietu" & x+1)
+          application("saytime" & x)    = application("saytime" & x+1)
+        next
+		  application("systemsay" & 40) = "yes"
+          application("me" & 40)        = session("user")
+          application("sexsay" & 40)    = session("sex")
+          application("color" & 40)     = "#007700"
+          application("showip" & 40)    = session("ip")
+          application("mood" & 40)      = ""
+          application("to" & 40)        = ""
+          application("siliao" & 40)    = ""
+          application("zixiao" & 40)    = ""
+          application("page" & 40)      = " 悄悄地离开了聊天室！"
+          application("tuan" & 40)      = ""
+          application("tietu" & 40)     = ""
+          application("saytime" & 40)   = time
+            application.unlock
+            session("oldrate")=""
+            session("ip")=""
+			session("id")=""
+            session("user")=""
+            session("sex")=""
+			session("userlevel")=""
+        exit for
+    end if
+   next
+End sub
+
+sub Application_OnStart
+End sub
+
+sub Application_OnEnd
+End sub
+</SCRIPT>

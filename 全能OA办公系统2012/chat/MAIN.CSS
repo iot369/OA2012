@@ -1,0 +1,45 @@
+.font {
+	FONT-SIZE: 11pt; LINE-HEIGHT: 11pt
+}
+A:link {
+	FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A:visited {
+	color="#0000FF";FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff8000; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+.cur {
+	COLOR: red; FONT-FAMILY: ËÎÌו; FONT-SIZE: 9pt
+}
+.dir {
+	FONT-FAMILY: ËÎÌו; FONT-SIZE: 11pt; FONT-WEIGHT: bold
+}
+.3dfont {
+	FILTER: glow(color=ffffff,strength=0) shadow(color=aaaaaa,direction:135); POSITION: relative; WIDTH: 100%
+}
+.list {
+	FONT-FAMILY: "ËÎÌו"; FONT-SIZE: 9pt
+}
+.title {
+	COLOR: #ffffff; FONT-SIZE: 10pt
+}
+.detail {
+	COLOR: #EFEFEF; FONT-SIZE: 10pt
+}
+A.F1:link {
+	COLOR: #660099; FONT-SIZE: 9pt; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+A.F1:hover {
+	COLOR: #0099ff; TEXT-DECORATION: none
+}
+A.F2:hover {
+	COLOR: #000000; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+A.F2:link {
+	COLOR: #EFEFEF; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.F2:visited {
+	COLOR: #000000; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
